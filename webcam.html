@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Face-find-fun</title>
+    <style> 
+      html,button{font-family:sans-serif; font-size:15px;}
+      body{height:100%; background:black;}
+      button{display:block;}
+    </style>
+</head>
+<body>
+
+  <!-- HTML5 video element -->
+  <video id="inputVideo" autoplay> </video>
+
+  <button onClick="changeFilter();"> Fun </button>
+<script type="text/javascript">  
+  /* Cross-browser window.URL */
+   window.URL = window.URL || window.webkitURL;
+  /* Feature detection of navigator.getUserMedia */
+  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia || navigator.msGetUserMedia;
+  /* Grab video element */
+  var video = document.getElementById("inputVideo");
+
+  /* Feed video src a Blob URL obtained from a LocalMediaStream object representing the webcam */
+  if (navigator.getUserMedia) {
+    navigator.getUserMedia({video: true},
+      function(stream) { //success callback
+        video.src = window.URL.createObjectURL(stream);
+      },
+      function(err) { // error callback
+        console.log("The following error occured: " + err);
+      }
+    );
+  }
+
+  var i = 0, filters = ["grayscale()", "hue-rotate(180deg)", "sepia(100%)", 
+                        "saturate(500%)", "blur(5px)", "invert()", "normal"];
+  function changeFilter() {
+    i = i % filters.length;
+    video.setAttribute("style","-webkit-filter:" + filters[i++]);
+  }
+</script>
+</body>
+</html>

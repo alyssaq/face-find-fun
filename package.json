@@ -1,0 +1,15 @@
+{
+  "name": "face-find-fun",
+  "version": "0.0.1",
+  "description": "getUserMedia, headtrackr and canvas",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alyssaq/face-find-fun"
+  },
+  "author": "Alyssa Quek",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.4.0"
+  }
+}
