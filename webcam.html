@@ -12,16 +12,19 @@
 </head>
 <body>
 
-  <!-- HTML5 video element -->
-  <video id="inputVideo" autoplay> </video>
-
-  <button onClick="changeFilter();"> Fun </button>
+  <!-- HTML5 video element and autoplay -->
+  <video id="inputVideo" autoplay></video>
+  <button id="btn"> Fun </button>
+  
 <script type="text/javascript">  
+(function() {
   /* Cross-browser window.URL */
    window.URL = window.URL || window.webkitURL;
+
   /* Feature detection of navigator.getUserMedia */
   navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                             navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
   /* Grab video element */
   var video = document.getElementById("inputVideo");
 
@@ -37,12 +40,17 @@
     );
   }
 
-  var i = 0, filters = ["grayscale()", "hue-rotate(180deg)", "sepia(100%)", 
-                        "saturate(500%)", "blur(5px)", "invert()", "normal"];
+  document.getElementById("btn").onclick = changeFilter();
+
   function changeFilter() {
-    i = i % filters.length;
-    video.setAttribute("style","-webkit-filter:" + filters[i++]);
+    var i = 0, filters = ["grayscale()", "hue-rotate(180deg)", "sepia(100%)", 
+                        "saturate(500%)", "blur(5px)", "invert()", "normal"];
+    return function() {
+      i = i % filters.length;
+      video.setAttribute("style","-webkit-filter:" + filters[i++]);
+    }
   }
+})();
 </script>
 </body>
 </html>
