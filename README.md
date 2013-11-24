@@ -9,7 +9,8 @@ Drawing with [HTML5 canvas](http://www.html5canvastutorials.com/tutorials/html5-
 Current version tracks your face via webcam and places a party hat on top of your head.
 Moving your head to the right corner changes the visual CSS webkit-filter
 
-**Demo**:  http://alyssaq.github.io/face-find-fun
+##Demo##
+http://alyssaq.github.io/face-find-fun
 
 ##Usage
 1) Install nodejs. The only node module dependency is express.   
