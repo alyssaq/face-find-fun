@@ -10,6 +10,6 @@
   "author": "Alyssa Quek",
   "license": "BSD",
   "dependencies": {
-    "express": "~3.4.0"
+    "express": "^4.12.2"
   }
 }

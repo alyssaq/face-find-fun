@@ -27,4 +27,6 @@ In the URL, type: chrome://flags and search and enable:
 
     > node app.js
 
-5) Have fun! Draw more shapes!
+5) View the party hat on top of your head at: <http://localhost:8080/>
+
+6) Have fun! Draw more shapes!
