@@ -10,7 +10,7 @@ Current version tracks your face via webcam and places a party hat on top of you
 Moving your head to the right corner changes the visual CSS webkit-filter
 
 ##Demo##
-http://alyssaq.github.io/face-find-fun
+<https://alyssaq.github.io/face-find-fun>
 
 ##Usage
 1) Install nodejs. The only node module dependency is express.   
